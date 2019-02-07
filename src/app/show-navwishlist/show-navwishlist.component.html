@@ -1,0 +1,25 @@
+<!-- <button (click)="gettracks()">Wishlist</button> -->
+<!-- <ul>
+  <li *ngFor="let track of alltracks">
+    {{track.trackName}}
+    <br><i>{{track.trackComment}}</i><br>
+    <img src="{{track.imageUrl}}" style="width:150px;height:150px" ><br>
+    <app-update [track]="track"></app-update>
+   </li>
+</ul> -->
+<div class="container">
+  <div class="card mb-4 shadow-sm" *ngFor="let track of alltracks">
+    <!-- <div class="card mb-4 shadow-sm"> -->
+    <div class="card-header">
+      <h1 class="my-0 font-weight-normal">{{track.trackName}}</h1>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title pricing-card-title">{{track.trackComment}} </h4>
+      <ul class="list-unstyled mt-3 mb-4">
+        <img src="{{track.imageUrl}}" style="width:150px;height:150px">
+      </ul>
+      <app-update [track]="track"></app-update>
+      <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
+    </div>
+  </div>
+</div>

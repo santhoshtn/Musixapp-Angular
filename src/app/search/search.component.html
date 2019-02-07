@@ -1,0 +1,43 @@
+<!-- <form #createForm="ngForm" (ngSubmit)="search()">
+  <input type="text" name="topass" [(ngModel)]="topass"/>
+  <button (click)="Search(topass)">Click here to search</button>
+</form> -->
+<div class="container">
+<div *ngIf="searchdata">
+  <div  *ngFor="let search of searchdata" id="mydiv">
+      <div class="card" style="width: 22rem">
+          <!-- <div class="card-header">
+            <h1 class="my-0 font-weight-normal">{{search.name}}</h1>
+          </div> -->
+          <div class="card-body shadow-sm">
+            
+            
+                <img src="{{geturl(search)}}"  >
+         
+            <h5 class="card-title">{{search.name}} </h5>
+            
+            <app-addwishlist [trackname]='search.name' [trackartist]='search.artist'
+                [trackurl]='geturl(search)'
+                [id]='search.listeners'></app-addwishlist>
+            <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
+          </div>
+        </div>
+   </div>
+</div>
+</div>
+
+
+<!-- <ul *ngIf="searchdata">
+    <li  *ngFor="let search of searchdata">{{search.name}}<br>{{search.artist}}<br>
+      <img src="{{geturl(search)}}" style="width:150px;height:150px" ><br>
+      <app-addwishlist [trackname]='search.name' [trackartist]='search.artist'
+      [trackurl]='geturl(search)'
+      [id]='search.listeners'></app-addwishlist>
+    </li>
+  </ul> -->
+
+
+
+
+
+
