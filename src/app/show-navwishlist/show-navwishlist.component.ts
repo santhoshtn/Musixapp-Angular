@@ -13,7 +13,7 @@ export class ShowNavwishlistComponent implements OnInit {
   ngOnInit() {
     this.service.getAllTracks().subscribe((data)=>{this.alltracks=data})
   }
-  // gettracks(){
-  //   this.service.getAllTracks().subscribe((data)=>{this.alltracks=data})
-  // }
+  gettracks(){
+    this.service.getAllTracks().subscribe((data)=>{this.alltracks=data})
+  }
 }

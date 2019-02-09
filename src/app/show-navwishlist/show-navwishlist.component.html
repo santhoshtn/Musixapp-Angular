@@ -8,18 +8,40 @@
    </li>
 </ul> -->
 <div class="container">
-  <div class="card mb-4 shadow-sm" *ngFor="let track of alltracks">
-    <!-- <div class="card mb-4 shadow-sm"> -->
-    <div class="card-header">
-      <h1 class="my-0 font-weight-normal">{{track.trackName}}</h1>
-    </div>
+  <div  *ngFor="let track of alltracks" id="mydiv">
+     <div class="card" style="width: 22rem"> 
     <div class="card-body">
+        <h5 class="my-0 font-weight-normal">{{track.trackName}}</h5>
       <h4 class="card-title pricing-card-title">{{track.trackComment}} </h4>
       <ul class="list-unstyled mt-3 mb-4">
-        <img src="{{track.imageUrl}}" style="width:150px;height:150px">
+        <img src="{{track.imageUrl}}" >
       </ul>
       <app-update [track]="track"></app-update>
-      <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
     </div>
   </div>
 </div>
+
+
+<!-- 
+<div class="container">
+  <div *ngIf="searchdata">
+    <div  *ngFor="let search of searchdata" id="mydiv">
+        <div class="card" style="width: 22rem">
+            
+            <div class="card-body shadow-sm">
+              
+              
+                  <img src="{{geturl(search)}}"  >
+           
+              <h5 class="card-title">{{search.name}} </h5>
+              
+              <app-addwishlist [trackname]='search.name' [trackartist]='search.artist'
+                  [trackurl]='geturl(search)'
+                  [id]='search.listeners'></app-addwishlist>
+      
+            </div>
+          </div>
+     </div>
+  </div>
+  </div>
+   -->

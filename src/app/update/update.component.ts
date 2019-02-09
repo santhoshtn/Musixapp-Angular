@@ -1,6 +1,7 @@
 import { SearchserviceService } from './../searchservice.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,AfterContentChecked,AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import {ShowNavwishlistComponent } from './../show-navwishlist/show-navwishlist.component'
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateComponent implements OnInit {
   @Input()
   track
-  constructor(private service: SearchserviceService,private _route: ActivatedRoute, private router: Router) { }
+  constructor(private service: SearchserviceService,private show: ShowNavwishlistComponent,private _route: ActivatedRoute, private router: Router) { }
   comment: string;
   ngOnInit() {
   }
@@ -19,25 +20,33 @@ export class UpdateComponent implements OnInit {
     this.service.updateComment(this.comment, this.track.trackId).subscribe(
       data => {
         console.log("POST Request is successful ", data);
+          // this.router.navigate(['/show']);
       },
       error => {
 
         console.log("Error", error);
       }
-
+      
     );
-    this.router.navigate(['/show']);
+    // this.show.gettracks();
+    // this.router.navigate(['/red']);
   }
   delete(){
     this.service.deletetrack(this.track.trackId).subscribe(
       data => {
         console.log("POST Request is successful ", data);
+        this.router.navigate(['/show']);
       },
       error => {
 
         console.log("Error", error);
       }
-
+      
     );
+    // this.show.gettracks();
+  }
+  ngAfterViewChecked(){
+  //   window.location.reload();
+
   }
 }

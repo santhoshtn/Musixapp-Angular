@@ -15,6 +15,7 @@ import { PresearchComponent } from './presearch/presearch.component';
 const appRoutes:Routes=[
   // { path:'search',component: SearchComponent},
   { path:'show',component:ShowNavwishlistComponent},
+  // { path:'red',redirectTo:'/show',pathMatch:'full',component:ShowNavwishlistComponent},
   { path:'searchtrack/:trackname',component:SearchComponent}
 
 ]
